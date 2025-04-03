@@ -1,6 +1,6 @@
 # MikroAuth client library
 
-A client-side library for the [MikroAuth magic link authentication service](https://github.com/mikaelvesavuori/mikroauth). You will be to point the client to the endpoint of your MikroAuth server.
+A client-side library for the [MikroAuth magic link authentication service](https://github.com/mikaelvesavuori/mikroauth). You will have to point the client to the endpoint of your MikroAuth server.
 
 The minified version is ~4KB, substantially smaller than clients for common authentication services like Firebase (~118KB).
 
