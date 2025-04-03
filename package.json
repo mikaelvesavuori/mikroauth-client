@@ -1,0 +1,48 @@
+{
+  "name": "mikroauth-client",
+  "description": "The client-side library for the MikroAuth magic link authentication service.",
+  "version": "1.0.0",
+  "author": "Mikael Vesavuori",
+  "license": "MIT",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikaelvesavuori/mikroauth-client"
+  },
+  "bugs": {
+    "url": "https://github.com/mikaelvesavuori/mikroauth-client/issues"
+  },
+  "homepage": "https://github.com/mikaelvesavuori/mikroauth-client",
+  "exports": {
+    ".": {
+      "browser": "./lib/mikroauth-client.min.js"
+    }
+  },
+  "types": "lib/index.d.ts",
+  "files": [
+    "/lib",
+    "!/lib/**/*.map",
+    "!/tests"
+  ],
+  "scripts": {
+    "test": "npm run lint && npm run test:unit",
+    "test:unit": "npx vitest run --coverage",
+    "test:watch": "npx vitest --watch",
+    "build": "npm run clean && node build.mjs && npm run build:types",
+    "build:types": "npx tsc --declaration --emitDeclarationOnly --outDir lib",
+    "clean": "rm -rf lib && mkdir lib",
+    "lint": "npx @biomejs/biome check --write ./src ./tests",
+    "package": "npm pack",
+    "prepublishOnly": "npm run build",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1",
+    "@types/node": "latest",
+    "@vitest/coverage-v8": "2",
+    "esbuild": "latest",
+    "husky": "9",
+    "typescript": "5",
+    "vitest": "2"
+  }
+}
